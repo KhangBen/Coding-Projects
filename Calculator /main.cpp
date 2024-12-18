@@ -2,10 +2,11 @@
 #include "calculator.h"
 using namespace std;
 
+const int EXIT_OPTION = 8;
 
 void introduciton()
 {
-    cout << "Welcome to Calculator App: " << endl << endl;
+    cout << "Welcome to Calculator App: " << endl;
 }
 
 int main()
@@ -20,6 +21,7 @@ int main()
         int y = 0;
         double result = 0; 
 
+        cout << "--------------------------------------------" << endl;
         cout << "   Pick from the following options: " << endl;
         cout << "   1) Add Two Numbers      " << endl;
         cout << "   2) Subtract Two Numbers " << endl;
@@ -57,11 +59,11 @@ int main()
                 break;
 
             default:
-                if (selection == 8) { cout << "Exiting Program... ...." << endl << endl; break; }
+                if (selection == 8) { cout << "Exiting Program..." << endl << endl; break; }
                 cout << "Invalid Option: Please Pick between 1 and 4 " << endl << endl;
         }
 
-    } while(selection != 8);
+    } while(selection != EXIT_OPTION);
 
 
     return 0;

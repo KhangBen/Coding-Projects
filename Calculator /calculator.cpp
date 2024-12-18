@@ -3,6 +3,7 @@
 #include "calculator.h"
 using namespace std;
 
+static const string operators[4] = {"+", "-", "x", "/"};
 
 calculator::calculator() {}
 
@@ -21,7 +22,6 @@ void calculator::getUserInput(int& x, int& y)
 void calculator::printResult(int s, const int x, const int y, const double r)
 {
     s--;
-    string operators[4] = {"+", "-", "x", "/"};
     
     if(s == 3)
     {
@@ -55,6 +55,10 @@ int calculator::multiplyTwoNumbers(int x, int y)
 
 double calculator::divideTwoNumbers(double x, double y)
 {
+    if (y==0)
+    {
+        cout << "Error: Division by zero is not allowed." << endl;
+        return 0;
+    }
     return x / y; 
-
 }
