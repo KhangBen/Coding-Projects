@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 #include "calculator.h"
 using namespace std;
 
@@ -9,7 +10,18 @@ void introduciton()
     cout << "Welcome to Calculator App: " << endl;
 }
 
-int main()
+void unitTests()
+{
+    calculator c;
+    // testing individual functions
+    assert(c.addTwoNumbers(3, 4) == 7);
+    assert(c.subtractTwoNumbers(15, 3) == 12);
+    assert(c.multiplyTwoNumbers(7, 9) == 63);
+    assert(c.divideTwoNumbers(5, 3) == 1.67);
+    cout << "All tests passed! " << endl;
+}
+
+int mainProgram()
 {
     introduciton(); 
     calculator c; 
@@ -67,4 +79,14 @@ int main()
 
 
     return 0;
+}
+
+int main()
+{
+    mainProgram(); // main program
+
+    // unitTests(); // units tests. 
+
+
+    return 0; 
 }
