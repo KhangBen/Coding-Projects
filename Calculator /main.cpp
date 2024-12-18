@@ -57,7 +57,7 @@ int main()
                 break;
 
             default:
-                if (selection == 8) { cout << "Exiting Program..." << endl; break; }
+                if (selection == 8) { cout << "Exiting Program... ...." << endl << endl; break; }
                 cout << "Invalid Option: Please Pick between 1 and 4 " << endl << endl;
         }
 
