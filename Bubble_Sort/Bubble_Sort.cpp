@@ -9,6 +9,10 @@ const int SIZE = 5;
   Space Complexity: O(1) is in-place sorting, no extra space required
 */
 
+/*
+  In the basic bubble sort, if the array becomes sorted early, 
+  the algorithm keeps on iterating through all the passes until end
+*/
 void basicBubbleSort(int arr[], int n)
 {
   for(int i = 0; i < n - 1; i++)
@@ -27,12 +31,17 @@ void basicBubbleSort(int arr[], int n)
   }
 }
 
+/*
+  The swapped flag checks if any elements were swapped during a pass.
+  If no swaps occur, the algorithm exits early because the array 
+  is already sorted.
+*/
 void optimizedBubbleSort(int arr[], int n)
 {
   for(int i = 0; i < n - 1; i++)
   {
     // n - i - 1 calculates the number of unsorted elements that still needs to be compared. 
-    for(int j = 0; j < n - i - 1; j++) 
+    for(int j = 0; j < n - i - 1; j++) // Compare the only unsorted elements
     {
       bool swapped = false; // flag to track if any swapping happened
       if(arr[j] > arr[j+1])
